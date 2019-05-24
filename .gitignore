@@ -1,20 +1,30 @@
-*~
-#*
-*#
-.#*
+HELP.md
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
-.settings/
+.settings
 .springBeans
-target/
-bin/
-_site/
+.sts4-cache
+
+### IntelliJ IDEA ###
 .idea
+*.iws
 *.iml
 *.ipr
-*.iws
-.factorypath
-*.log
-.shelf
-*.swp
-*.swo
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/

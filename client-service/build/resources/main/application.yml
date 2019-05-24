@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: client-service
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/doldol?allowPublicKeyRetrieval=true&sslMode=DISABLED&serverTimezone=UTC
+    username: root
+    password: dori44
+
+
+
+server:
+  port: 8082

@@ -37,16 +37,16 @@ public class DemogatewayApplication {
 						.uri("http://httpbin.org"))
 				.route("hystrix_route", r -> r.host("*.hystrix.org")
 						.filters(f -> f.hystrix(c -> c.setName("slowcmd")))
-								.uri("http://httpbin.org"))
+						.uri("http://httpbin.org"))
 				.route("hystrix_fallback_route", r -> r.host("*.hystrixfallback.org")
 						.filters(f -> f.hystrix(c -> c.setName("slowcmd").setFallbackUri("forward:/hystrixfallback")))
-								.uri("http://httpbin.org"))
+						.uri("http://httpbin.org"))
 				.route("limit_route", r -> r
-					.host("*.limited.org").and().path("/anything/**")
+						.host("*.limited.org").and().path("/anything/**")
 						.filters(f -> f.requestRateLimiter(c -> c.setRateLimiter(redisRateLimiter())))
-					.uri("http://httpbin.org"))
+						.uri("http://httpbin.org"))
 				.route("websocket_route", r -> r.path("/echo")
-					.uri("ws://localhost:9000"))
+						.uri("ws://localhost:9000"))
 				.build();
 		//@formatter:on
 	}

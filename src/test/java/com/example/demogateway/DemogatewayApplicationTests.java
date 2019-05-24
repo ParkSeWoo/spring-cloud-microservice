@@ -100,7 +100,7 @@ public class DemogatewayApplicationTests {
 					.exchange()
 					.returnResult(Map.class);
 			if (result.getStatus().equals(HttpStatus.TOO_MANY_REQUESTS)) {
-				System.out.println("Received result: "+result);
+				System.out.println("Received result: " + result);
 				wasLimited = true;
 				break;
 			}

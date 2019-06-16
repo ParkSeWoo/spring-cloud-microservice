@@ -1,0 +1,9 @@
+bootJar {
+    enabled = false
+    baseName = 'core'
+    version = '0.0.1-SNAPSHOT'
+}
+
+jar {
+    enabled = true
+}

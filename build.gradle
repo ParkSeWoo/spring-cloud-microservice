@@ -22,10 +22,11 @@ ext {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'eclipse'
+    apply plugin: 'idea'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
-    group = 'park.sewoo'
+    group = 'com.doldol.study'
     version = '0.0.1-SNAPSHOT'
     sourceCompatibility = '11'
     targetCompatibility = '11'
@@ -60,9 +61,8 @@ subprojects {
         compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
         compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
         compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.1.1.RELEASE'
-        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
         compileOnly 'org.projectlombok:lombok'
-
+        annotationProcessor 'org.projectlombok:lombok'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 
@@ -86,7 +86,7 @@ project(':client-service') {
 
 project(':core') {
     dependencies {
-
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
     }
 }
 
@@ -131,6 +131,8 @@ project(':auth') {
 project(':token') {
     dependencies {
         compile project(':core')
-        
+        compile group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '7.1'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+        implementation 'org.springframework.boot:spring-boot-starter-security'
     }
 }

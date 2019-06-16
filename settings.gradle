@@ -4,10 +4,11 @@ pluginManagement {
     }
 }
 rootProject.name = 'spring-colud-gateway-sample'
-
-include 'client-service'
+//module
 include 'core'
+include 'token'
+//server
+include 'client-service'
 include 'discovery'
 include 'cloud-gateway'
 include 'auth'
-include 'token'
